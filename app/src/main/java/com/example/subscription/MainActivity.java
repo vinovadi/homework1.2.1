@@ -14,9 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        final Intent intent = new Intent(MainActivity.this, MainActivity.class);
         final TextView userNameInput = findViewById(R.id.userNameInput);
         final TextView userEmailInput = findViewById(R.id.userEmailInput);
 
@@ -36,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent);
+                userEmailInput.getEditableText().clear();
+                userNameInput.getEditableText().clear();
             }
         });
     }
